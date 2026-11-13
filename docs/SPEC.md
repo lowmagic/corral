@@ -267,9 +267,9 @@ Heartbeat and finish answer `409` when the lease id is no longer current. Enqueu
 
 ## Example: a speech pipeline
 
-[Hearsay](https://github.com/junglestyle/hearsay) assembles captured audio into conversations on a NAS,
+[Hearsay](https://github.com/lowmagic/hearsay) assembles captured audio into conversations on a NAS,
 transcribes them on a GPU host, folds the transcripts back in on the NAS, and hands off to
-[Idea Machine](https://github.com/junglestyle/ideamachine).
+[Idea Machine](https://github.com/lowmagic/ideamachine).
 
 | Step | Kind | Needs |
 | --- | --- | --- |
