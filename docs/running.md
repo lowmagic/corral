@@ -29,9 +29,9 @@ and any events not yet delivered.
 
 The server reads it at start, so restart it after a change.
 
-Run it in Docker. CI publishes the server image to `ghcr.io/junglestyle/corral` for each commit on `main`, built for
+Run it in Docker. CI publishes the server image to `ghcr.io/lowmagic/corral` for each commit on `main`, built for
 `linux/amd64` and tagged with the commit's full SHA. There's no `latest` or version tag. A deployment pins the image
-by digest, `ghcr.io/junglestyle/corral@sha256:…`, which the commit's check run shows in its summary. A deployment
+by digest, `ghcr.io/lowmagic/corral@sha256:…`, which the commit's check run shows in its summary. A deployment
 repo keeps that pin in a copy of [`examples/compose.yaml`](../examples/compose.yaml), with `image:` set to it and no
 `build:`, and upgrades by changing the pin.
 
@@ -85,7 +85,7 @@ Start the server first; a worker retries until it answers.
 systemd restarts the worker if it dies, and stopping the unit stops its job too, so nothing keeps running under a
 lease the server has given away.
 
-1. `uv tool install git+https://github.com/junglestyle/corral@COMMIT` puts `corral` in `~/.local/bin`, where
+1. `uv tool install git+https://github.com/lowmagic/corral@COMMIT` puts `corral` in `~/.local/bin`, where
    `COMMIT` is the full SHA the deployment pins.
 2. Write `~/.config/corral/env` with `CORRAL_URL` and `CORRAL_TOKEN`, mode 600.
 3. Write `~/.config/corral/worker.toml` with at least `name` and `offers`.

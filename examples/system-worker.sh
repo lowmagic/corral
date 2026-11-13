@@ -50,7 +50,7 @@ if [[ ! -x "$DIR/bin/uv" ]] || [[ "$("$DIR/bin/uv" --version)" != "uv $UV_VERSIO
 fi
 
 # uv records where a tool came from, so a different commit is a reinstall and the same one is a no-op.
-"$DIR/bin/uv" tool install --python 3.15 "git+https://github.com/junglestyle/corral@$COMMIT"
+"$DIR/bin/uv" tool install --python 3.15 "git+https://github.com/lowmagic/corral@$COMMIT"
 
 # A transient unit, so nothing is written to /etc. Stopping it also stops the job it's running.
 systemctl stop corral-worker 2>/dev/null || true
